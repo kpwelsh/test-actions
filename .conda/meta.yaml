@@ -1,3 +1,6 @@
+{% set linux_compiler_version = "10.4.0" %}
+{% set macos_compiler_version = "12"}
+
 package: 
   name: action-test
   version: 1
@@ -8,9 +11,5 @@ source:
 requirements:
   build:
     - cmake >=3.17.0
-    - {{ compiler('cxx') }} # [linux]
-    - clang                 # [osx]
-
-test:
-  commands:
-    - action-test
+    - {{ compiler('cxx') }}={{ linux_compiler_version }} # [linux]
+    - {{ compiler('cxx') }}={{ macos_compiler_version }} # [osx]

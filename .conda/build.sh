@@ -1,4 +1,4 @@
 mkdir build
 cd build
-cmake ..
+cmake .. $CMAKE_ARGS
 make install
