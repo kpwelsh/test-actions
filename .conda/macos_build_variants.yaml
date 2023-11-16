@@ -1,6 +1,4 @@
 c_compiler:
-  - gcc
+  - clang
 cxx_compiler:
-  - gxx
-target_platform:
-  - osx
+  - clang
