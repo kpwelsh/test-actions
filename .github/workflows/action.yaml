@@ -12,8 +12,10 @@ jobs:
         include:
           - os: macos-latest
             variant_file: macos_build_variants.yaml
-          - os: linux-latest
+            cross_compile: false
+          - os: ubuntu-latest
             variant_file: linux_build_variants.yaml
+            cross_compile: true
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -29,6 +31,5 @@ jobs:
 
     - run: |
         cd .conda
-        mamba mambabuild . -e macos_build_variants.yaml
-      with:
-        target_os: ${{ matrix.os }}
+        export CROSS_COMPILING=${{ matrix.cross_compile }}
+        mamba mambabuild . -e ${{ matrix.variant_file }}
