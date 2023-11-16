@@ -27,7 +27,6 @@ jobs:
         miniforge-version: latest
         use-mamba: true
         environment-file: etc/conda_build_environment.yaml
-        CONDA: ${{ env.CONDA }}
 
     - run: |
         cd .conda
