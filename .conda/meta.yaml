@@ -1,7 +1,7 @@
 {% set compiler_version = "10.4.0" %}
 
 package: 
-  name: fierro-voxelizer-py
+  name: action-test
   version: 1
 
 source:
