@@ -1,0 +1,17 @@
+{% set compiler_version = "10.4.0" %}
+
+package: 
+  name: fierro-voxelizer-py
+  version: 1
+
+source:
+  path: ../../
+
+requirements:
+  build:
+    - cmake >=3.17.0
+    - {{ compiler('cxx') }} ={{ compiler_version }}
+
+test:
+  commands:
+    - action-test
