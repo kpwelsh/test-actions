@@ -20,7 +20,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
-    - run: echo "CONDA=~/" >> $GITHUB_ENV
+    - run: echo "CONDA=$HOME/" >> $GITHUB_ENV
     - uses: conda-incubator/setup-miniconda@v2
       with:
         miniforge-variant: Mambaforge
