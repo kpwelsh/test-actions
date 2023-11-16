@@ -3,12 +3,13 @@ package:
   version: 1
 
 source:
-  path: ../../
+  path: ../
 
 requirements:
   build:
     - cmake >=3.17.0
-    - {{ compiler('cxx') }}
+    - {{ compiler('cxx') }} # [linux]
+    - clang                 # [osx]
 
 test:
   commands:
